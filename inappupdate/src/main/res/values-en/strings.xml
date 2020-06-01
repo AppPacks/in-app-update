@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">InAppUpdate</string>
+    <string name="message_delete_app">Delete app</string>
+    <string name="message_new_version">"  %s %s New version"</string>
+    <string name="message_error_update">Update successfully</string>
+    <string name="message_success_update">Update successfully</string>
+    <string name="new_changes">New changes:</string>
+    <string name="retry">Retry</string>
+    <string name="update_application">Update Application</string>
+</resources>

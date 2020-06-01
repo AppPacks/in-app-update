@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- basic space  -->
+    <dimen name="space_content">54.0dip</dimen>
+    <dimen name="space_2x">32.0dip</dimen>
+    <dimen name="space">16.0dip</dimen>
+    <dimen name="space_half">8.0dip</dimen>
+    <dimen name="space_quarter">4.0dip</dimen>
+    <dimen name="space_quarter_half">2.0dip</dimen>
+
+
+    <!-- basic textSizes size  -->
+    <dimen name="textSize_title">20sp</dimen>
+    <dimen name="textSize_subTitle">16sp</dimen>
+    <dimen name="textSize_xlarg">22sp</dimen>
+    <dimen name="textSize_larg">18sp</dimen>
+    <dimen name="textSize_medium">14.0sp</dimen>
+    <dimen name="textSize_small">12sp</dimen>
+    <dimen name="textSize_micro">10sp</dimen>
+    <dimen name="textSize_very_micro">8sp</dimen>
+    <dimen name="textSize_very_micro_half">4sp</dimen>
+
+</resources>

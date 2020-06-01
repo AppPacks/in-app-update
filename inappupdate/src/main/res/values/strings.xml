@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">InAppUpdate</string>
+    <string name="update_application">Update Application</string>
+    <string name="message_new_version">"  %s %s New version"</string>
+    <string name="message_success_update">Update successfully</string>
+    <string name="message_error_update">Update successfully</string>
+    <string name="retry">Retry</string>
+    <string name="message_delete_app">Delete app</string>
+    <string name="new_changes">New changes:</string>
+</resources>

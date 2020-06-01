@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">InAppUpdate</string>
+    <string name="message_delete_app" >حذف اپلیکیشن</string>
+    <string name="message_error_update">بروزرسانی موفق</string>
+    <string name="message_new_version">"  %s %s نسخه جدید برنامه"</string>
+    <string name="message_success_update">بروزرسانی موفق</string>
+    <string name="new_changes">تغییرات جدید:</string>
+    <string name="retry">تلاش مجدد</string>
+    <string name="update_application">بروزرسانی برنامه</string>
+
+</resources>
