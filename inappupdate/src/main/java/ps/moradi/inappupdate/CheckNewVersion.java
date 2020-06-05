@@ -16,6 +16,5 @@ public class CheckNewVersion {
 
         AppUpdateDialog appUpdateDialog = new AppUpdateDialog(activity);
         appUpdateDialog.show();
-
     }
 }

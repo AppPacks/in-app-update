@@ -7,4 +7,7 @@ public class ApplicationConfig {
     public String minVersion;
     public String changes;
     public String appUrl;
+    public String googlePlayUrl;
+    public String cafebazarUrl;
+    public String apkSize;
 }

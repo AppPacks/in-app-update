@@ -1,13 +1,8 @@
 package ps.moradi.inappupdate.App;
 
 import android.content.Context;
-import android.content.res.Configuration;
 
 import androidx.multidex.MultiDexApplication;
-
-import com.liulishuo.filedownloader.FileDownloader;
-import com.liulishuo.filedownloader.connection.FileDownloadUrlConnection;
-import com.liulishuo.filedownloader.util.FileDownloadLog;
 
 import ps.moradi.inappupdate.help.FontOverride;
 import ps.moradi.inappupdate.help.LocaleManager;
@@ -39,14 +34,14 @@ public class App extends MultiDexApplication {
 
     private void fileDownloaderConfig() {
         // just for open the log in this demo project.
-        FileDownloadLog.NEED_LOG = true;
-        FileDownloader.setupOnApplicationOnCreate(this)
-                .connectionCreator(new FileDownloadUrlConnection
-                        .Creator(new FileDownloadUrlConnection.Configuration()
-                        .connectTimeout(15_000) // set connection timeout.
-                        .readTimeout(15_000) // set read timeout.
-                ))
-                .commit();
+//        FileDownloadLog.NEED_LOG = true;
+//        FileDownloader.setupOnApplicationOnCreate(this)
+//                .connectionCreator(new FileDownloadUrlConnection
+//                        .Creator(new FileDownloadUrlConnection.Configuration()
+//                        .connectTimeout(15_000) // set connection timeout.
+//                        .readTimeout(15_000) // set read timeout.
+//                ))
+//                .commit();
     }
 
     @Override

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ps.moradi.inappupdate">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -8,11 +9,17 @@
         android:name=".App.App"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true">
+
         <activity
             android:name=".activity.UpdateActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/InAppUpdateTheme" />
+        <activity
+            android:name=".activity.InstallActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/InAppUpdateTheme" />
+
     </application>
 
 </manifest>

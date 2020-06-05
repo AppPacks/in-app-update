@@ -16,6 +16,6 @@ public class ThemeSelector {
 
     public void chooseTheme(Context context) {
 
-        context.setTheme(R.style.AppTheme);
+        context.setTheme(R.style.InAppUpdateTheme);
     }
 }

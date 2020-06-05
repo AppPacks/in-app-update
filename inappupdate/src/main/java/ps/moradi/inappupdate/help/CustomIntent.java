@@ -4,12 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-
 import androidx.core.content.FileProvider;
-
 import java.io.File;
-
-import ps.moradi.inappupdate.BuildConfig;
 
 public class CustomIntent {
 
@@ -18,7 +14,7 @@ public class CustomIntent {
         Uri appUri;
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             try {
-                appUri = FileProvider.getUriForFile(activity, BuildConfig.APPLICATION_ID + ".fileprovider", apkFile);
+                appUri = FileProvider.getUriForFile(activity, activity.getApplicationInfo().packageName + ".fileprovider", apkFile);
 
                 Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
                 intent.setDataAndType(appUri, "application/vnd.android.package-archive");

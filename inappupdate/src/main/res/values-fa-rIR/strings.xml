@@ -8,5 +8,9 @@
     <string name="new_changes">تغییرات جدید:</string>
     <string name="retry">تلاش مجدد</string>
     <string name="update_application">بروزرسانی برنامه</string>
+    <string name="update_description">%s recommends that you updates to the latest version. With update you can use from complet features.</string>
+    <string name="update">Update</string>
+    <string name="no_thanks">No thanks</string>
+    <string name="sample_changes">- Create surver page \n - Create log page \n - Fix bugs</string>
 
 </resources>
