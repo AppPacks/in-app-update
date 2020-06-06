@@ -109,7 +109,7 @@ public class AppUpdateDialog extends Dialog {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(getContext(),UpdateActivity.class);
+                Intent intent = new Intent(getContext(), UpdateActivity.class);
                 getContext().startActivity(intent);
                 dismiss();
             }
@@ -139,7 +139,7 @@ public class AppUpdateDialog extends Dialog {
 
             @Override
             public void onFailure(Call<ApplicationConfig> call, Throwable t) {
-                Toast.makeText(getContext(), "Server Error", Toast.LENGTH_SHORT).show();
+
             }
         });
     }

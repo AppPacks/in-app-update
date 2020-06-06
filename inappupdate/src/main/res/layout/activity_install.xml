@@ -10,13 +10,13 @@
         android:id="@+id/img_loading"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.253"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/loading"/>
+        app:srcCompat="@drawable/loading" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -66,6 +66,7 @@
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:progressTint="@color/colorPrimary"
                 android:progress="0" />
 
         </LinearLayout>

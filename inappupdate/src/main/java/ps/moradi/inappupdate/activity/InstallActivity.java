@@ -6,6 +6,8 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.RotateDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +19,9 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import ps.moradi.inappupdate.R;
+import ps.moradi.inappupdate.help.CustomIntent;
 import ps.moradi.inappupdate.help.DownloadAPK;
+import ps.moradi.inappupdate.help.Helper;
 import ps.moradi.inappupdate.help.SharedKeys;
 import ps.moradi.inappupdate.help.SharedPrefrence;
 import ps.moradi.inappupdate.model.ApplicationConfig;
@@ -25,6 +29,9 @@ import ps.moradi.inappupdate.model.ApplicationConfig;
 public class InstallActivity extends AppCompatActivity {
 
     private ApplicationConfig applicationConfig;
+    private ProgressBar progressBar;
+    private TextView txt_size;
+    private TextView txt_percent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +42,42 @@ public class InstallActivity extends AppCompatActivity {
 
         initView();
 
-        DownloadAPK downloadAPK = new DownloadAPK(getApplicationContext());
-        downloadAPK.beginDownload();
 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            DownloadAPK downloadAPK = new DownloadAPK(getApplicationContext(), new DownloadAPK.OnDownloadListener() {
+
+                @Override
+                public void onDownloading(int dlProgress, int downloadedBytes, int totalBytes) {
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Display progress
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                                progressBar.setProgress(dlProgress, true);
+                            } else {
+                                progressBar.setProgress(dlProgress);
+                            }
+
+                            // Display size
+                            txt_size.setText(Helper.bytes2String(downloadedBytes) + " / " + Helper.bytes2String(totalBytes));
+
+                            // Display percent
+                            txt_percent.setText(dlProgress + "%");
+                        }
+                    });
+
+                }
+
+                @Override
+                public void onComplete(Uri downloadUri) {
+
+                    CustomIntent customIntent = new CustomIntent();
+                    customIntent.installApk(InstallActivity.this, downloadUri);
+                }
+            });
+            downloadAPK.beginDownload(applicationConfig.appUrl);
+        }
 
     }
 
@@ -51,9 +91,9 @@ public class InstallActivity extends AppCompatActivity {
     private void initView() {
 
         ImageView img_loading = findViewById(R.id.img_loading);
-        TextView txt_size = findViewById(R.id.txt_size);
-        TextView txt_percent = findViewById(R.id.txt_percent);
-        ProgressBar progressBar = findViewById(R.id.progressBar);
+        txt_size = findViewById(R.id.txt_size);
+        txt_percent = findViewById(R.id.txt_percent);
+        progressBar = findViewById(R.id.progressBar);
         ImageView btn_cancel = findViewById(R.id.btn_cancel);
 
 
