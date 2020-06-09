@@ -6,7 +6,6 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.RotateDrawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+
+import java.io.File;
 
 import ps.moradi.inappupdate.R;
 import ps.moradi.inappupdate.help.CustomIntent;
@@ -70,10 +71,10 @@ public class InstallActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onComplete(Uri downloadUri) {
+                public void onComplete(File file) {
 
                     CustomIntent customIntent = new CustomIntent();
-                    customIntent.installApk(InstallActivity.this, downloadUri);
+                    customIntent.installApk(InstallActivity.this, file);
                 }
             });
             downloadAPK.beginDownload(applicationConfig.appUrl);
@@ -85,7 +86,6 @@ public class InstallActivity extends AppCompatActivity {
 
         String strObj = SharedPrefrence.getString(getApplicationContext(), SharedKeys.APPLICATION_CONFIG, null);
         applicationConfig = new Gson().fromJson(strObj, ApplicationConfig.class);
-
     }
 
     private void initView() {

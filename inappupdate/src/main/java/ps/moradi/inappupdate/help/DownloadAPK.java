@@ -8,9 +8,6 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -38,7 +35,7 @@ public class DownloadAPK {
 
     public void beginDownload(String appUrl) {
 
-        file = new File(context.getExternalFilesDir(null), "Dummy");
+        file = new File(context.getExternalFilesDir(null), "app.apk");
 
         /*
        Create a DownloadManager.Request with all the information necessary to start the download
@@ -140,7 +137,7 @@ public class DownloadAPK {
     public interface OnDownloadListener {
         void onDownloading(int dlProgress, int downloadedBytes, int totalBytes);
 
-        void onComplete(Uri downloadUri);
+        void onComplete(File downloadUri);
     }
 
     private BroadcastReceiver onDownloadComplete = new BroadcastReceiver() {
@@ -153,7 +150,7 @@ public class DownloadAPK {
                 Toast.makeText(context, "Download Completed", Toast.LENGTH_SHORT).show();
 
                 if (onDownloadListener != null) {
-                    onDownloadListener.onComplete(Uri.fromFile(file));
+                    onDownloadListener.onComplete(file);
                 }
             }
         }
