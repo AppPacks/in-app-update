@@ -2,7 +2,6 @@
 
 A library for update into own application.
 
-[GOOGLE](http://google.com)
 ## nstallation
 Add this line to the dependency of app
 
