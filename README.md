@@ -15,7 +15,7 @@ repositories {
 Add this code where that you whant to display upload dialog.
 
 ```java
-new CheckNewVersion(MainActivity.this).apply();
+new CheckNewVersion(context).apply();
 ```
 
 ## License
